@@ -2,6 +2,7 @@
 require('dotenv').config()
 
 const bodyParser = require("body-parser");
+const cors = require("cors");
 const express = require("express");
 const logger = require("morgan");
 const mongoClient = require("mongoose");
@@ -24,6 +25,7 @@ const deckRoute = require("./routes/deck");
 const userRoute = require("./routes/user");
 
 // Middlewares
+app.use(cors());
 app.use(logger("dev"));
 app.use(bodyParser.json());
 
